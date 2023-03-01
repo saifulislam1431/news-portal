@@ -58,8 +58,9 @@ const displayAlert = (items, name) => {
                         <i class="fa-solid fa-eye"></i>
                         <p>${item.total_view ? item.total_view :"Not available" }</p>
                         </div>
-                            <div>
-                             <p class="text-lg font-semibold">Rating: <span class="text-green-400">${item.rating.number}</span></p>
+                            <div class="flex justify-between items-center gap-1">
+                            <p>${generateRating(item.rating.number)}</p>
+                             <p class="text-lg font-semibold"><span class="text-green-400">${item.rating.number}</span></p>
                             </div>
                            <div>
                            <label for="my-modal-3" onclick="loadModalDetails('${item._id}')" class="btn  border-blue-600 bg-transparent text-blue-700 font-semibold text-lg hover:bg-blue-600 hover:text-white outline-none"><i class="fa-solid fa-right-long"></i></label>
@@ -103,5 +104,19 @@ const showTrending = () => {
     let todayTrending = fetchData.filter(singleData => singleData.others_info.is_trending === true);
     const cateName = document.getElementById('category-name').innerText;
     displayAlert(todayTrending, cateName)
+}
+
+// Generate rating
+
+const generateRating = (rating) => {
+    let ratingHTML = ''
+    for (let i = 1; i <= Math.floor(rating); i++) {
+        ratingHTML += `<i class="fa-solid fa-star font-medium text-amber-500"></i>`
+
+    }
+    if (rating - Math.floor(rating) > 0) {
+        ratingHTML += `<i class="fa-regular fa-star-half-stroke font-medium text-amber-500"></i>`
+    }
+    return ratingHTML
 }
 getAllCategories()

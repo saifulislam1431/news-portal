@@ -39,14 +39,14 @@
         </nav>
         <!-- Category Section -->
         <section id="category" class="p-6">
-            <div id="category-container" class="text-lg font-medium text-gray-500 flex justify-between">
+            <div id="category-container" class="text-lg font-medium text-gray-500 flex  flex-col md:flex-row   md:justify-between">
             </div>
         </section>
         <!-- Alert Section -->
         <section id="alert" class="p-6">
             <div class="alert shadow-lg ">
                 <div class="font-medium">
-                    <span id="item-found">4</span> items found for category <span id="category-name">Entertainment</span>
+                    <p> <span id="item-found">4</span> items found for category <span id="category-name">Entertainment</span></p>
                 </div>
 
             </div>
@@ -61,7 +61,7 @@
                 <div class="flex justify-center items-center">
                     <p class="font-medium mr-3">Sort By View: </p>
                     <div>
-                        <select class="select select-info rounded-lg w-36 max-w-xs">
+                        <select class="select select-info rounded-lg w-36">
                             <option disabled selected>Default</option>
                             <option>All News</option>
                             <option>Breaking News</option>
@@ -70,7 +70,7 @@
                     </div>
                 </div>
             </div>
-            <div class="p-6">
+            <div class="pr-6">
                 <button onclick="showTodayPick()" class="btn rounded-lg py-0 bg-blue-600 outline-none border-0" id="picks">Today's Pick</button>
                 <button onclick="showTrending()" class="btn rounded-lg py-0 bg-transparent border-blue-600 outline-none text-blue-600" id="trending">Trending</button>
             </div>
