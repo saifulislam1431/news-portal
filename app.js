@@ -45,7 +45,7 @@ const displayAlert = (items, name) => {
                              <p class="text-lg font-semibold">Rating: <span class="text-green-400">${item.rating.badge}</span></p>
                             </div>
                            <div>
-                           <button class="btn border-blue-600 bg-transparent text-blue-700 font-semibold text-lg hover:bg-blue-600 hover:text-white outline-none"><i class="fa-solid fa-right-long"></i></button>
+                           <label for="my-modal-3" onclick="loadModalDetails('${item._id}')" class="btn  border-blue-600 bg-transparent text-blue-700 font-semibold text-lg hover:bg-blue-600 hover:text-white outline-none"><i class="fa-solid fa-right-long"></i></label>
                            </div>
                         </div>
                     </div>
@@ -54,6 +54,23 @@ const displayAlert = (items, name) => {
         console.log(item);
     })
 
+
+}
+
+// Function for modal
+const loadModalDetails = (newsId) => {
+
+    const url = `https://openapi.programming-hero.com/api/news/${newsId}`
+    fetch(url).then(res => res.json()).then(data => displayModalDetails(data.data[0]))
+
+}
+const displayModalDetails = (allDetails) => {
+    console.log(allDetails);
+    const { title, details } = allDetails;
+    const titleOFNews = document.getElementById('title-of-news')
+    const description = document.getElementById('description')
+    titleOFNews.innerText = title;
+    description.innerText = details;
 
 }
 getAllCategories()
