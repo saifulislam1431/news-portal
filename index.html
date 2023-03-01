@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en" data-theme="corporate">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>News Portal</title>
+    <link href="https://cdn.jsdelivr.net/npm/daisyui@2.51.2/dist/full.css" rel="stylesheet" type="text/css" />
+</head>
+
+<body>
+    <!-- Header section -->
+    <header>
+        <!-- Navbar -->
+        <nav class="bg-base-100 p-6">
+            <div class="navbar pb-4 border-b-2 border-b-gray-300">
+                <div class="flex-1">
+                    <h1 class="text-xl font-bold font-serif bg-blue-600 p-2 rounded-md text-white">News</h1>
+                    <h1 class="text-xl font-bold font-serif  p-2  text-blue-600">Portal</h1>
+                </div>
+                <div class="flex-none">
+                    <div class="dropdown dropdown-end flex text-lg font-medium text-gray-500">
+
+                        <a href="" class="text-blue-600 mr-5 border-b-2 border-b-blue-600">News</a>
+                        <a href="" class="mr-6">Blog</a>
+                    </div>
+                    <div class="dropdown dropdown-end">
+                        <label tabindex="0" class="btn btn-ghost btn-circle avatar">
+                            <div class="w-10 rounded-full">
+                                <img src="./assets/Avatar.png" />
+                            </div>
+                        </label>
+
+                    </div>
+                </div>
+
+            </div>
+        </nav>
+        <!-- Category Section -->
+        <section id="category" class="p-6">
+            <div id="category-container" class="text-lg font-medium text-gray-500 flex justify-between">
+            </div>
+        </section>
+        <!-- Alert Section -->
+        <section id="alert" class="p-6">
+            <div class="alert shadow-lg ">
+                <div class="font-medium">
+                    <span id="item-found">4</span> items found for category <span id="category-name">Entertainment</span>
+                </div>
+
+            </div>
+
+        </section>
+    </header>
+
+
+
+
+
+
+
+    <script src="app.js"></script>
+    <script src="https://cdn.tailwindcss.com"></script>
+</body>
+
+</html>
